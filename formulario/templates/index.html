@@ -1,3 +1,37 @@
-<h1> {{ titulo }}</h1>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ titulo }}</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css"  rel="stylesheet" />
 
-<h2>Esto es una prueba de rederizar html utilizando plantillas</h2>
+</head>
+<body>
+    <p class="text-2xl font-bold">Hola en tailwind</p>
+    <style> 
+        .form-field {
+            margin-bottom: 20px;
+        }
+        
+        /* Estilos para las etiquetas de los campos */
+        .form-label {
+            font-weight: bold;
+        }
+        
+        /* Estilos para los radio buttons */
+        .radio-label {
+            margin-right: 10px;
+        }
+    </style>
+    <h1>{{ titulo }}</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}  <!-- Renderiza el formulario -->
+        <button type="submit">Enviar</button>
+    </form>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+
+</body>
+</html>
