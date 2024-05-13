@@ -7,31 +7,28 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css"  rel="stylesheet" />
 
 </head>
-<body>
-    <p class="text-2xl font-bold">Hola en tailwind</p>
-    <style> 
-        .form-field {
-            margin-bottom: 20px;
-        }
-        
-        /* Estilos para las etiquetas de los campos */
-        .form-label {
-            font-weight: bold;
-        }
-        
-        /* Estilos para los radio buttons */
-        .radio-label {
-            margin-right: 10px;
-        }
-    </style>
-    <h1>{{ titulo }}</h1>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}  <!-- Renderiza el formulario -->
-        <button type="submit">Enviar</button>
-    </form>
+<body class="flex flex-col justify-center items-center bg-green-100">
+    {% comment %} <header class="flex justify-between px-8 py-4 bg-green-500 text-white w-full mb-10">
+        <div>
+            <p class="text-2xl font-bold">Logo 1</p>
+        </div>
+        <div class="my-auto">
+            <h1>Logo 2</h1>
+        </div>
+    </header> {% endcomment %}
+
+    <div class="max-w-7xl bg-white shadow-lg rounded-lg overflow-hidden mt-10">
+        <div class="p-5 bg-green text-white bg-green-600">
+            <p class="text-2xl font-bold mb-2">ENCUESTA A EGRESADOS ITIC's</p>
+            <p class="text-xs font-semibold"> Agradecemos dar sus respuestas con mayor transparencia y veracidad a las siguientes preguntas, lo cual nos permitirá un acercamiento a la realidad concreta que viven los egresados del 2024, específicamente los Ingenieros en TIC's, así como deducir la problemática a la que se enfrentan.</p>
+        </div>
+        <form method="post" class="p-8">
+            {% csrf_token %}
+            {{ form.as_p }}  
+            <button type="submit" class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Enviar</button>
+        </form>
+    </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
-
 </body>
 </html>
